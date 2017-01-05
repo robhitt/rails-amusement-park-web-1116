@@ -1,0 +1,26 @@
+<%= form_tag({controller: 'users', action: 'create', method: 'post'}) do %>
+
+<%= label_tag :name %>
+<br>
+<%= text_field_tag :name %>
+<br>
+<%= label_tag(:height, "Height (in inches)")%>
+<br>
+<%= text_field_tag :height%>
+<br>
+<%= label_tag(:happiness, "How happy are you? (1-5 scale)")%>
+<br>
+<%= number_field_tag :happiness%>
+<br>
+<%= label_tag(:tickets, "How many dollars are in your pocket?")%>
+<br>
+<%= number_field_tag :tickets%>
+<br>
+<%= label_tag(:admin, "Check box if you're a theme park owner")%>
+<%= check_box_tag :admin%>
+<br>
+<br>
+
+<%= submit_tag 'Create User' %>
+
+<% end %>
