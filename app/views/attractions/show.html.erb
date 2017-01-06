@@ -1,0 +1,10 @@
+<h1>Show individual Attraction</h1>
+
+<h2><%= @attraction.name %></h2>
+  <% if @user.admin == true  %>
+      <%= link_to 'edit', edit_attraction_path(@attraction) %>
+      <%= link_to "delete", delete_attraction_path(@attraction) %>
+  <% end %>
+
+
+  <%= button_to "Go on this ride", ride_path, params: {attraction_id: @attraction.id} %>

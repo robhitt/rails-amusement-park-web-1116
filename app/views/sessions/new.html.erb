@@ -1,0 +1,18 @@
+<b>Please Login:</b>
+
+<%= form_tag('/sessions') do %>
+<%# form_tag({controller: 'sessions', action: 'create', method: 'post'}) %>
+
+  <%= label_tag :name %>
+  <%= text_field_tag 'user[name]' %>
+
+  <br>
+
+  <%= label_tag :password %>
+  <%= password_field_tag 'user[password]' %>
+
+  <p></p>
+
+  <%= submit_tag "Sign In"%>
+
+<% end %>

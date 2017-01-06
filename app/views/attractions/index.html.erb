@@ -1,0 +1,17 @@
+<h1>Listing Attractions</h1>
+
+<% @attractions.each do |attraction| %>
+
+  <% if @user.admin == true  %>
+      <%= link_to attraction.name, edit_attraction_path(attraction) %>
+    <% else %>
+      <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
+  <% end %>
+
+
+
+
+
+
+
+<% end %>

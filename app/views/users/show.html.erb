@@ -1,0 +1,35 @@
+
+<% if flash[:notice] %>
+  <div class="notice"><font color="green"><%= flash[:notice] %></font></div>
+<% end %>
+
+<center>
+  <table>
+
+    <tr>
+      <td bgcolor="#D3D3D3">
+
+      </td>
+
+      <td bgcolor="#D3D3D3">
+        <% if @user.admin %>
+          <b>ADMIN</b>
+        <% end %>
+        <p></p>
+        <b>Name:</b> <%= @user.name %>
+        <p></p>
+        <b>Tickets:</b> <%= @user.tickets %>
+        <p></p>
+        <b>Mood:</b> <%= @user.mood %>
+        <p></p>
+        <b>Height:</b> <%= @user.height %> inches
+        <p></p>
+        <%= link_to 'Edit', edit_user_path %>
+        <p></p>
+        <%= link_to 'See attractions', attractions_path %>
+        <p></p>
+        <%= link_to 'Log Out', logout_path %>
+      </td>
+    </tr>
+  </table>
+</center>

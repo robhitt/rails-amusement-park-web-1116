@@ -4,12 +4,25 @@ class User < ActiveRecord::Base
   has_secure_password
 
   def mood
-    if self.nausea > self.happiness
-      return 'sad'
-    else
-      return 'happy'
+    unless self.admin
+      if self.nausea > self.happiness
+        return 'sad'
+      else
+        return 'happy'
+      end
     end
   end
+
+
+  # def password=(password)
+  #   @password = password # "Fido"
+  #   salted_and_hashed = bcrpyt(password) # $2aAfdkjlsdafkjlds.asdfjkl
+  #   password_digest= salted_and_hashed
+  # end
+  #
+  # def password
+  #   @password
+  # end
 
 
 end
